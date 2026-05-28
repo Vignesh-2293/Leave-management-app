@@ -1,0 +1,5 @@
+id,firstName,lastName,email,department
+EMP001,Rajesh,Kumar,rajesh.kumar@company.com,Engineering
+EMP002,Sarah,Jenkins,sarah.j@company.com,Human Resources
+EMP003,Amit,Sharma,amit.s@company.com,Finance
+EMP004,John,Doe,john.doe@company.com,Engineering
