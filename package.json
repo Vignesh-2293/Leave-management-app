@@ -10,16 +10,27 @@
   },
   "scripts": {
     "start": "cds-serve",
-    "watch-employee-lview": "cds watch --open employeelview/index.html?sap-ui-xx-viewCache=false --livereload false",
-    "watch-emp-management": "cds watch --open empmanagement/index.html?sap-ui-xx-viewCache=false --livereload false",
-    "watch-project1": "cds watch --open project1/index.html?sap-ui-xx-viewCache=false --livereload false"
+    "watch-emp-leaves": "cds watch --open empleaves/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-employees": "cds watch --open employees/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-employee": "cds watch --open employee/index.html?sap-ui-xx-viewCache=false --livereload false"
   },
   "workspaces": [
     "app/*"
   ],
   "sapux": [
-    "app/employee-lview",
-    "app/emp-management",
-    "app/project1"
-  ]
+    "app/emp-leaves",
+    "app/employees",
+    "app/employees",
+    "app/employee"
+  ],
+  "cds": {
+    "requires": {
+      "db": {
+        "kind": "sqlite",
+        "credentials": {
+          "url": "db/my.db"
+        }
+      }
+    }
+  }
 }

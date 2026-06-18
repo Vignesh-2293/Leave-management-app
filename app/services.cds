@@ -1,4 +1,2 @@
 
-using from './emp-management/annotations';
-
-using from './project1/annotations';
+using from './employee/annotations';

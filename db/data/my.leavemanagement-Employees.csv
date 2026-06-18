@@ -1,5 +1,8 @@
-id,firstName,lastName,email,department
-EMP001,Rajesh,Kumar,rajesh.kumar@company.com,Engineering
-EMP002,Sarah,Jenkins,sarah.j@company.com,Human Resources
-EMP003,Amit,Sharma,amit.s@company.com,Finance
-EMP004,John,Doe,john.doe@company.com,Engineering
+ID,emp_number,name,email,role,totalLeaveEntitlement,leaveBalance,manager_ID
+10000000-0000-0000-0000-000000000001,EMP001,Sania Mirza,sania.mirza@corp.com,Chief Executive,30,30,null
+20000000-0000-0000-0000-000000000001,EMP002,Rohan Bopanna,rohan.bopanna@corp.com,Engineering Manager,25,22,10000000-0000-0000-0000-000000000001
+20000000-0000-0000-0000-000000000002,EMP003,P V Sindhu,pv.sindhu@corp.com,HR Manager,25,25,10000000-0000-0000-0000-000000000001
+30000000-0000-0000-0000-000000000001,EMP004,Arjun Erigaisi,arjun.e@corp.com,Senior Developer,22,16,20000000-0000-0000-0000-000000000001
+30000000-0000-0000-0000-000000000002,EMP005,Praggnanandhaa R,pragg.r@corp.com,Associate Developer,22,20,20000000-0000-0000-0000-000000000001
+30000000-0000-0000-0000-000000000003,EMP006,Gukesh D,gukesh.d@corp.com,QA Engineer,22,22,20000000-0000-0000-0000-000000000001
+30000000-0000-0000-0000-000000000004,EMP007,Harika Dronavalli,harika.d@corp.com,HR Specialist,22,20,20000000-0000-0000-0000-000000000002

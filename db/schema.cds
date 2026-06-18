@@ -1,37 +1,87 @@
 namespace my.leavemanagement;
 
-using { managed, cuid } from '@sap/cds/common';
+using {
+    managed,
+    cuid
+} from '@sap/cds/common';
 
-// 1. Employee Master Data Entity
-entity Employees {
-    key id        : String(10); // Auto-unique key
-    firstName     : String(50) @mandatory @assert.notNull;
-    lastName      : String(50) @mandatory @assert.notNull;
-    email         : String(100) @unique; // Secondary constraint
-    department    : String(50);
-    leaveRequests : Association to many LeaveRequests on leaveRequests.employee = $self;
+
+entity Employees : cuid {
+    @assert.unique  @mandatory       @assert.notNull
+    emp_number            : String(10);
+
+    @mandatory      @assert.notNull
+    name                  : String(50);
+
+    @mandatory      @assert.notNull  @assert.unique
+    email                 : String(100);
+
+    @mandatory
+    role                  : String(50);
+
+    @mandatory
+    totalLeaveEntitlement : Integer;
+
+    @mandatory
+    leaveBalance          : Integer;
+    @mandatory
+    manager               : Association to Employees;
+    leaveRequests         : Composition of many LeaveRequests
+                                on leaveRequests.employee = $self;
 }
 
-// 2. Transactional Leave Management Entity
 entity LeaveRequests : cuid, managed {
-    // Dynamic relational linkages linking cleanly via context IDs
-    employee  : Association to Employees @mandatory @assert.notNull; 
-    
+    @mandatory  @assert.notNull
+    employee  : Association to Employees;
+
+    @mandatory  @assert.notNull
     leaveType : String(20) enum {
         VACATION = 'Annual Vacation';
-        SICK     = 'Sick Leave';
+        SICK = 'Sick Leave';
         PERSONAL = 'Personal Leave';
     } default 'VACATION';
 
-    startDate : Date @mandatory @assert.notNull;
-    endDate   : Date @mandatory @assert.notNull;
-    daysCount : Integer @readonly; // Calculated dynamically in backend js loop
-    
-    status    : String(20) enum {
-        PENDING  = 'Pending Approval';
+    @mandatory  @assert.notNull
+    startDate : Date;
+
+    @mandatory  @assert.notNull
+    endDate   : Date;
+
+    @readonly
+    daysCount : Integer;
+
+    @mandatory  @assert.notNull
+    status    : String(15) enum {
+        PENDING = 'Pending';
         APPROVED = 'Approved';
         REJECTED = 'Rejected';
     } default 'PENDING';
 
     comment   : String(500);
 }
+
+@readonly
+entity ManagerValueHelp as
+    select from (
+        select distinct
+            ID,
+            emp_number,
+            name,
+            role
+        from Employees
+        where role like '%Manager%' or role = 'Chief Executive'
+    ) {
+        key ID,
+            emp_number,
+            name,
+            role
+    };
+
+@readonly
+entity RoleValueHelp as select from (
+    select distinct 
+        role 
+    from Employees
+) {
+    key role 
+};

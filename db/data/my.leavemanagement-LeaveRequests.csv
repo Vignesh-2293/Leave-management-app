@@ -1,5 +1,6 @@
-ID,employee_id,leaveType,startDate,endDate,daysCount,status,comment,createdAt,createdBy,modifiedAt,modifiedBy
-8f1a23b4-7c9d-4e2b-8a1f-3c5d6e7f8a9b,EMP001,VACATION,2026-06-01,2026-06-05,5,APPROVED,"Annual summer vacation with family",2026-05-20,Rajesh Kumar,2026-05-22,Rajesh Kumar
-4b2c3d4e-5f6a-7b8c-9d0e-1a2b3c4d5e6f,EMP001,SICK,2026-08-12,2026-08-13,2,APPROVED,"Doctor appointment and recovery",2026-08-10,Rajesh Kumar,2026-08-12,Rajesh Kumar
-9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d,EMP002,SICK,2026-05-10,2026-05-11,2,PENDING,"Feeling unwell",2026-05-09,Sarah Jenkins,2026-05-09,Sarah Jenkins
-1f2e3d4c-5b6a-7b8c-9d0e-1a2b3c4d5e6f,EMP003,PERSONAL,2026-07-15,2026-07-15,1,REJECTED,"Urgent personal business",2026-07-10,Amit Sharma,2026-07-12,Amit Sharma
+ID,employee_ID,leaveType,startDate,endDate,daysCount,status,comment,createdAt,createdBy,modifiedAt,modifiedBy
+a0000000-0000-0000-0000-000000000001,30000000-0000-0000-0000-000000000001,Vacation,2026-07-10,2026-07-17,6,APPROVED,Annual family trip,2026-06-01T09:00:00Z,arjun.e@corp.com,2026-06-02T14:30:00Z,rohan.bopanna@corp.com
+a0000000-0000-0000-0000-000000000002,30000000-0000-0000-0000-000000000002,Sick,2026-06-15,2026-06-16,2,APPROVED,Medical checkup,2026-06-15T08:15:00Z,pragg.r@corp.com,2026-06-15T09:00:00Z,rohan.bopanna@corp.com
+a0000000-0000-0000-0000-000000000003,30000000-0000-0000-0000-000000000003,Vacation,2026-12-24,2026-12-31,6,PENDING,Year-end holidays,2026-06-16T11:00:00Z,gukesh.d@corp.com,2026-06-16T11:00:00Z,gukesh.d@corp.com
+a0000000-0000-0000-0000-000000000004,30000000-0000-0000-0000-000000000004,Casual,2026-08-03,2026-08-04,2,REJECTED,Urgent personal work,2026-06-10T10:00:00Z,harika.d@corp.com,2026-06-11T13:15:00Z,pv.sindhu@corp.com
+a0000000-0000-0000-0000-000000000005,20000000-0000-0000-0000-000000000001,Vacation,2026-09-14,2026-09-18,5,PENDING,Attending conference,2026-06-17T07:30:00Z,rohan.bopanna@corp.com,2026-06-17T07:30:00Z,rohan.bopanna@corp.com
